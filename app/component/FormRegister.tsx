@@ -17,7 +17,7 @@ export default function FormRegister() {
         </div>
 
         <div className="text-gray-600 text-sm w-full flex justify-center mb-4">
-          Buat akun untuk melanjutkan 
+          Buat akun untuk melanjutkan
         </div>
 
         <form>
@@ -59,7 +59,9 @@ export default function FormRegister() {
             />
           </div>
           <div className="mb-2">
-            <span className="text-gray-700 text-xs pb-1">Konfirmasi Password</span>
+            <span className="text-gray-700 text-xs pb-1">
+              Konfirmasi Password
+            </span>
             <span className="text-red-400">*</span>
             <input
               type="text"
