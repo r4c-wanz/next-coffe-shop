@@ -207,11 +207,11 @@ export default function Home() {
                 Lihat Semua Menu <ArrowRightIcon size={20} />
               </Link>
             </div>
-            <div className="mt-9 flex gap-7 text-sm font-bold">
+            <div className="mt-9 grid grid-cols-5 gap-7 text-sm font-bold">
               {menuItems.map((item, index) => (
                 <div
                   key={index}
-                  className="min-w-59 rounded-4xl p-5.5 outline outline-[#DAD7CD]"
+                  className="w-full rounded-4xl p-5.5 outline outline-[#DAD7CD]"
                 >
                   <div
                     id="placeholder"
