@@ -1,88 +1,86 @@
 "use client";
 
 import Link from "next/link";
+import LogoWithText from "../LogoWithText";
 
 export default function FormRegister() {
   return (
     <div className="w-full max-w-md">
-      <div className="rounded-lg border border-[#8B5E3C] p-5">
-        <div className="flex w-full items-center justify-center pb-1"></div>
-
-        <div className="flex w-full items-center gap-3 py-1">
-          <div className="h-px flex-1 bg-[#8B5E3C]"></div>
-          <h2 className="flex justify-center text-2xl font-semibold text-gray-700">
-            Daftar Akun
-          </h2>
-          <div className="h-px flex-1 bg-[#8B5E3C]"></div>
-        </div>
-
-        <div className="mb-4 flex w-full justify-center text-sm text-gray-600">
-          Buat akun untuk melanjutkan
-        </div>
-
-        <form>
-          <div className="mb-2">
-            <span className="pb-1 text-xs text-gray-700">Nama Lengkap</span>
-            <span className="text-red-400">*</span>
-            <input
-              type="text"
-              placeholder="Masukkan Nama Lengkap"
-              className="w-full rounded border border-[#8B5E3C] px-3 py-2.5 text-xs text-gray-700 focus:outline-none"
-            />
-          </div>
-
-          <div className="mb-2">
-            <span className="pb-1 text-xs text-gray-700">Email </span>
-            <span className="text-red-400">*</span>
-            <input
-              type="email"
-              placeholder="Masukkan Email"
-              className="w-full rounded border border-[#8B5E3C] px-3 py-2.5 text-xs text-gray-700 focus:outline-none"
-            />
-          </div>
-          <div className="mb-2">
-            <span className="pb-1 text-xs text-gray-700">No Handphone </span>
-            <span className="text-red-400">*</span>
-            <input
-              type="email"
-              placeholder="Masukkan No Handphone"
-              className="w-full rounded border border-[#8B5E3C] px-3 py-2.5 text-xs text-gray-700 focus:outline-none"
-            />
-          </div>
-          <div className="mb-2">
-            <span className="pb-1 text-xs text-gray-700">Password </span>
-            <span className="text-red-400">*</span>
-            <input
-              type="text"
-              placeholder="Masukkan Password"
-              className="w-full rounded border border-[#8B5E3C] px-3 py-2.5 text-xs text-gray-700 focus:outline-none"
-            />
-          </div>
-          <div className="mb-2">
-            <span className="pb-1 text-xs text-gray-700">
-              Konfirmasi Password
-            </span>
-            <span className="text-red-400">*</span>
-            <input
-              type="text"
-              placeholder="Masukkan Ulang Password"
-              className="w-full rounded border border-[#8B5E3C] px-3 py-2.5 text-xs text-gray-700 focus:outline-none"
-            />
-          </div>
-          <div className="mb-1 flex w-full justify-end p-1 text-xs">
-            <Link href="/login" className="cursor-pointer text-gray-700">
-              Sudah Punya Akun?
-            </Link>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full cursor-pointer rounded bg-[#8B5E3C] p-2.5 text-sm font-semibold text-white"
-          >
-            Masuk
-          </button>
-        </form>
+      <div className="flex w-full justify-center pb-5">
+        <LogoWithText />
       </div>
+      <h2 className="text-center font-mono text-[28px] font-semibold text-[#3A5A40]">
+        Daftar Akun
+      </h2>
+      <p className="mt-2 text-center text-sm font-medium text-[#666666]">
+        Buat akun untuk melanjutkan
+      </p>
+      <form className="mt-6">
+        <div>
+          <label className="text-sm font-semibold text-[#344E41]">
+            Nama Lengkap <span className="text-[#E68B24]">*</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Masukkan Nama Lengkap"
+            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
+          />
+        </div>
+        <div className="mt-4">
+          <label className="text-sm font-semibold text-[#344E41]">
+            Email <span className="text-[#E68B24]">*</span>
+          </label>
+          <input
+            type="email"
+            placeholder="Masukkan Email"
+            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
+          />
+        </div>
+        <div className="mt-4">
+          <label className="text-sm font-semibold text-[#344E41]">
+            No Handphone <span className="text-[#E68B24]">*</span>
+          </label>
+          <input
+            type="tel"
+            placeholder="Masukkan No Handphone"
+            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
+          />
+        </div>
+        <div className="mt-4">
+          <label className="text-sm font-semibold text-[#344E41]">
+            Password <span className="text-[#E68B24]">*</span>
+          </label>
+          <input
+            type="password"
+            placeholder="Masukkan Password"
+            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
+          />
+        </div>
+        <div className="mt-4">
+          <label className="text-sm font-semibold text-[#344E41]">
+            Konfirmasi Password <span className="text-[#E68B24]">*</span>
+          </label>
+          <input
+            type="password"
+            placeholder="Masukkan Ulang Password"
+            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
+          />
+        </div>
+        <div className="mt-3 flex justify-end">
+          <Link
+            href="/login"
+            className="cursor-pointer text-sm font-semibold text-[#3A5A40]"
+          >
+            Sudah Punya Akun?
+          </Link>
+        </div>
+        <button
+          type="submit"
+          className="mt-6 w-full cursor-pointer rounded-[20px] bg-[#3A5A40] py-4 text-sm font-bold text-white"
+        >
+          Daftar
+        </button>
+      </form>
     </div>
   );
 }

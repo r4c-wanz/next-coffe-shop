@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <div>
       <Navbar />
-      <div className="min-h-[calc(100dvh-370px)]">{children}</div>
+      <div className="min-h-[calc(100dvh-138px)]">{children}</div>
       <Footer />
     </div>
   );

@@ -129,7 +129,7 @@ export default function Home() {
           </div>
         </section>
         <section id="features" className="relative z-1 -mt-16.5 p-5">
-          <div className="mx-auto flex max-w-323 items-center justify-between gap-17.5 rounded-3xl bg-white px-12 py-10 outline -outline-offset-1 outline-[#DAD7CD]">
+          <div className="mx-auto grid max-w-323 grid-cols-4 items-center justify-between gap-17.5 rounded-3xl bg-white px-12 py-10 outline -outline-offset-1 outline-[#DAD7CD]">
             <div className="flex items-center gap-7">
               <CoffeeIcon size={60} className="text-[#3A5A40]" />
               <div className="max-w-39.5">
@@ -147,7 +147,7 @@ export default function Home() {
                 <h3 className="font-semibold text-[#000000]">
                   Gratis Ongkir Min. 30K
                 </h3>
-                <p className="mt-2 max-w-34.5 text-sm font-medium text-[#666666]">
+                <p className="mt-2 text-sm font-medium text-[#666666]">
                   Lebih hemat, lebih nyaman
                 </p>
               </div>
@@ -248,7 +248,7 @@ export default function Home() {
                   href="/"
                   className="mt-5 inline-flex items-center gap-3.5 rounded-[20px] bg-[#3A5A40] px-6.5 py-4 text-xl font-bold text-white"
                 >
-                  Ekslor Menu <ArrowRightIcon />
+                  Eksplor Menu <ArrowRightIcon />
                 </Link>
               </div>
               <div className="absolute top-0 right-0 bottom-0 w-190 bg-linear-to-r from-[rgba(240,240,240,0)] from-0% to-[#F0F0F0] to-20%"></div>
