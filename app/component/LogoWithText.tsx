@@ -1,4 +1,4 @@
-export default function LogoWithText() {
+export default function LogoWithText({ className }: { className?: string }) {
   return (
     <svg
       width="144"
@@ -6,6 +6,7 @@ export default function LogoWithText() {
       viewBox="0 0 144 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <rect width="50" height="50" rx="11.8491" fill="#3A5A40" />
       <circle

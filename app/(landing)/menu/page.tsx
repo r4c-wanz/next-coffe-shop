@@ -1,4 +1,5 @@
-import { PlusIcon } from "lucide-react";
+import Categories from "@/app/component/Categories";
+import { PlusIcon, SearchIcon, SlidersHorizontalIcon } from "lucide-react";
 
 export default function MenuPage() {
   const menuItems = [
@@ -64,23 +65,24 @@ export default function MenuPage() {
           <h2 className="mt-3 px-1 font-semibold text-[#666666]">
             Temukan berbagai pilihan minuman kopi terbaik kami.
           </h2>
-          <div className="mt-6 flex items-center justify-between text-[#3A5A40]">
-            <div className="flex h-10 gap-4 rounded-[10px] bg-[#F6EFE8] outline-2 -outline-offset-2 outline-[#DAD7CD]">
-              <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] bg-[#3A5A40] px-5 text-sm font-semibold text-white">
-                Semua
-              </div>
-              <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                Ice Coffe
-              </div>
-              <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                Hot Coffe
-              </div>
-              <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                Signature
-              </div>
-              <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                Non Coffe
-              </div>
+          <div className="mt-8">
+            <label className="relative">
+              <SearchIcon
+                size={20}
+                className="absolute top-1/2 -translate-y-1/2 left-3.5 text-[#666666]"
+              />
+              <input
+                type="text"
+                placeholder="Cari menu favoritmu..."
+                className="w-full rounded-xl p-3.5 pl-10.5 outline outline-[#DAD7CD] placeholder:text-[#A3A3A3]"
+              />
+            </label>
+            <div className="mt-8 flex items-center justify-between text-[#3A5A40]">
+              <Categories />
+              <button className="flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-white px-5 text-sm font-semibold outline outline-[#DAD7CD]">
+                <SlidersHorizontalIcon size={20} />
+                Filter
+              </button>
             </div>
           </div>
           <div className="mt-9 grid grid-cols-5 gap-7 text-sm font-semibold">

@@ -176,8 +176,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="menu" className="mt-5.5 p-5">
-          <div className="mx-auto max-w-323">
+        <section id="menu" className="h-[90dvh] p-5 flex items-center">
+          <div className="mx-auto max-w-323 flex-1">
             <h2 className="px-1 font-semibold text-[#666666]">Menu Kami</h2>
             <h3 className="mt-3 px-1 font-mono text-[32px] font-semibold text-[#3A5A40]">
               Pilihan Menu Favoritmu
@@ -255,8 +255,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="best-seller" className="p-5">
-          <div className="mx-auto max-w-323">
+        <section id="best-seller" className="h-[80dvh] p-5 flex items-center">
+          <div className="mx-auto max-w-323 flex-1">
             <h2 className="px-1 font-semibold text-[#666666]">Best Seller</h2>
             <h3 className="mt-3 px-1 font-mono text-[32px] font-semibold text-[#3A5A40]">
               Paling banyak dipesan
@@ -331,8 +331,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="testimonials" className="p-5">
-          <div className="mx-auto max-w-323">
+        <section id="testimonials" className="h-[80dvh] p-5 flex items-center">
+          <div className="mx-auto max-w-323 flex-1">
             <h2 className="px-1 font-semibold text-[#666666]">
               Apa kata mereka?
             </h2>
