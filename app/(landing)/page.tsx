@@ -149,7 +149,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="menu" className="h-[90dvh] p-5 flex items-center">
+        <section id="menu" className="flex h-[90dvh] items-center p-5">
           <div className="mx-auto max-w-323 flex-1">
             <h2 className="px-1 font-semibold text-[#666666]">Menu Kami</h2>
             <h3 className="mt-3 px-1 font-mono text-[32px] font-semibold text-[#3A5A40]">
@@ -161,7 +161,7 @@ export default function Home() {
                 onCategoryChange={setActiveCategory}
               />
               <Link
-                href="/"
+                href="/menu"
                 className="flex items-center gap-2 px-1 font-semibold"
               >
                 Lihat Semua Menu <ArrowRightIcon size={20} />
@@ -172,29 +172,32 @@ export default function Home() {
                 Menu tidak ditemukan.
               </p>
             ) : (
-            <div className="mt-9 grid grid-cols-5 gap-7 text-sm font-bold">
-              {filteredMenuItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="w-full rounded-4xl p-5.5 outline outline-[#DAD7CD]"
-                >
+              <div className="mt-9 grid grid-cols-5 gap-7 text-sm font-bold">
+                {filteredMenuItems.map((item) => (
                   <div
-                    id="placeholder"
-                    className="h-30.5 rounded-[14px] bg-[#F0F0F0]"
-                  />
-                  <h4 className="mt-5 font-bold">{item.name}</h4>
-                  <p className="mt-2 text-[#666666]">{item.component}</p>
-                  <div className="mt-6.5 flex items-center justify-between gap-3">
-                    <p className="flex gap-1.5">
-                      Rp <span>{item.price.toLocaleString()}</span>
-                    </p>
-                    <button className="flex h-7.5 w-7.5 cursor-pointer items-center justify-center rounded-full bg-[#3A5A40] text-white">
-                      <PlusIcon />
-                    </button>
+                    key={item.id}
+                    className="w-full rounded-4xl p-5.5 outline outline-[#DAD7CD]"
+                  >
+                    <div
+                      id="placeholder"
+                      className="h-30.5 rounded-[14px] bg-[#F0F0F0]"
+                    />
+                    <h4 className="mt-5 font-bold">{item.name}</h4>
+                    <p className="mt-2 text-[#666666]">{item.component}</p>
+                    <div className="mt-6.5 flex items-center justify-between gap-3">
+                      <p className="flex gap-1.5">
+                        Rp{" "}
+                        <span>
+                          {item.price.toLocaleString("id-ID")}
+                        </span>
+                      </p>
+                      <button className="flex h-7.5 w-7.5 cursor-pointer items-center justify-center rounded-full bg-[#3A5A40] text-white">
+                        <PlusIcon />
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
             )}
           </div>
         </section>
@@ -221,7 +224,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="best-seller" className="h-[80dvh] p-5 flex items-center">
+        <section id="best-seller" className="flex h-[80dvh] items-center p-5">
           <div className="mx-auto max-w-323 flex-1">
             <h2 className="px-1 font-semibold text-[#666666]">Best Seller</h2>
             <h3 className="mt-3 px-1 font-mono text-[32px] font-semibold text-[#3A5A40]">
@@ -242,7 +245,7 @@ export default function Home() {
                     <p className="mt-2 text-[#666666]">{item.component}</p>
                     <div className="mt-6.5 flex items-center justify-between gap-3">
                       <p className="flex items-center gap-1.5">
-                        Rp <span>{item.price.toLocaleString()}</span>
+                        Rp <span>{item.price.toLocaleString("id-ID")}</span>
                       </p>
                       <div className="flex items-center gap-1">
                         <StarIcon className="fill-[#E68B24] text-transparent" />
@@ -272,7 +275,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="testimonials" className="h-[80dvh] p-5 flex items-center">
+        <section id="testimonials" className="flex h-[80dvh] items-center p-5">
           <div className="mx-auto max-w-323 flex-1">
             <h2 className="px-1 font-semibold text-[#666666]">
               Apa kata mereka?

@@ -32,29 +32,6 @@ export default function AboutPage() {
     },
   ];
 
-  const team = [
-    {
-      photo: "/Barista.png",
-      name: "Raka Pratama",
-      role: "Head Barista",
-    },
-    {
-      photo: "/5 Foto.jpg",
-      name: "Dinda Anjani",
-      role: "Barista",
-    },
-    {
-      photo: "/6 Foto.jpg",
-      name: "Fajar Nugraha",
-      role: "Barista",
-    },
-    {
-      photo: "/7 Foto.png",
-      name: "Salsa Amelia",
-      role: "Roastmaster",
-    },
-  ];
-
   return (
     <div className="pb-7.5">
       <section
@@ -194,38 +171,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="team" className="mt-5.5 p-5">
-        <div className="mx-auto max-w-323">
-          <h2 className="px-1 font-semibold text-[#666666]">Tim Kami</h2>
-          <h3 className="mt-3 px-1 font-mono text-[32px] font-semibold text-[#3A5A40]">
-            Orang-Orang di Balik Secangkir Kopimu
-          </h3>
-          <div className="mt-9 grid grid-cols-4 gap-7">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="overflow-hidden rounded-4xl outline outline-[#DAD7CD]"
-              >
-                <div className="relative h-59 w-full overflow-hidden">
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5.5">
-                  <h4 className="font-bold">{member.name}</h4>
-                  <p className="mt-2 text-sm font-medium text-[#666666]">
-                    {member.role}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="cta" className="mt-5.5 p-5">
         <div className="mx-auto max-w-323">
           <div className="relative overflow-hidden rounded-[20px] bg-[#3A5A40] px-12.5 py-10 text-white">
@@ -245,6 +190,61 @@ export default function AboutPage() {
               </Link>
             </div>
             <div className="absolute top-0 right-0 bottom-0 w-170 bg-linear-to-r from-[rgba(97,123,102,0)] from-0% to-[#617B66] to-20%"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" className="mt-5.5 p-5">
+        <div className="mx-auto flex max-w-323 gap-15">
+          <div className="grid max-w-160 flex-1 grid-cols-2 gap-7">
+            <div className="row-span-2 overflow-hidden rounded-2xl outline outline-[#DAD7CD]">
+              <div className="relative w-full overflow-hidden">
+                <Image
+                  src="/hero-img-depan-toko.png"
+                  alt=""
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl outline outline-[#DAD7CD]">
+              <div className="relative w-full overflow-hidden">
+                <Image
+                  src="/hero-img-depan-toko.png"
+                  alt=""
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl outline outline-[#DAD7CD]">
+              <div className="relative w-full overflow-hidden">
+                <Image
+                  src="/hero-img-depan-toko.png"
+                  alt=""
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="max-w-91.5">
+            <h2 className="px-1 font-semibold text-[#666666]">
+              Lebih dari sekedar kopi
+            </h2>
+            <h3 className="mt-3 px-1 font-mono text-[32px] font-semibold text-[#3A5A40]">
+              Tempat di mana kopi cerita dimulai
+            </h3>
+            <div className="mt-5 px-1 font-medium">
+              <p>
+                Kami percaya, kopi bukan hanya tentang rasa. Tapi tentang momen,
+                percakapan, inpirasi, dan koneksi.
+              </p>
+              <p className="mt-1">
+                Di Cituisi Coffee, setiap detail kami hadirkan untuk memberikan
+                pengalaman terbaik bagi setiap pecinta kopi.
+              </p>
+            </div>
           </div>
         </div>
       </section>
