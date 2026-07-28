@@ -1,24 +1,26 @@
 "use client";
 
-import { useState } from "react";
+export const categories = [
+  { name: "Semua" },
+  { name: "Ice Coffe" },
+  { name: "Hot Coffe" },
+  { name: "Signature" },
+  { name: "Non Coffe" },
+];
 
-export default function Categories() {
-  const categories = [
-    { name: "Semua" },
-    { name: "Ice Coffe" },
-    { name: "Hot Coffe" },
-    { name: "Signature" },
-    { name: "Non Coffe" },
-  ];
-
-  const [activeCategory, setActiveCategory] = useState("Semua");
-
+export default function Categories({
+  activeCategory,
+  onCategoryChange,
+}: {
+  activeCategory: string;
+  onCategoryChange: (category: string) => void;
+}) {
   return (
     <ul className="flex h-10 gap-4">
       {categories.map((category) => (
         <li
           key={category.name}
-          onClick={() => setActiveCategory(category.name)}
+          onClick={() => onCategoryChange(category.name)}
           className={`${
             activeCategory === category.name
               ? "relative z-1 flex h-full items-center justify-center rounded-xl bg-[#3A5A40] px-5 text-sm font-semibold text-white"

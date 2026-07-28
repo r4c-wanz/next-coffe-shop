@@ -1,59 +1,121 @@
+"use client";
+
+import { useMemo, useState } from "react";
 import Categories from "@/app/component/Categories";
-import { PlusIcon, SearchIcon, SlidersHorizontalIcon } from "lucide-react";
+import FilterDropdown, {
+  type SortOption,
+} from "@/app/component/FilterDropdown";
+import { PlusIcon, SearchIcon } from "lucide-react";
+
+type MenuItem = {
+  id: number;
+  name: string;
+  component: string;
+  price: number;
+  category: string;
+};
+
+const menuItems: MenuItem[] = [
+  {
+    id: 1,
+    name: "Es Tiramisu Latte",
+    component: "Kopi + Susu + Tiramisu",
+    price: 30000,
+    category: "Ice Coffe",
+  },
+  {
+    id: 2,
+    name: "Es  Americano",
+    component: "Kopi + Air + Es",
+    price: 22000,
+    category: "Ice Coffe",
+  },
+  {
+    id: 3,
+    name: "Es Cappucino Latte",
+    component: "Kopi + Susu + Cincau",
+    price: 28000,
+    category: "Ice Coffe",
+  },
+  {
+    id: 4,
+    name: "Es Caramel Latte",
+    component: "Kopi + Susu + Caramel",
+    price: 29000,
+    category: "Ice Coffe",
+  },
+  {
+    id: 5,
+    name: "Es Rose & Rosella",
+    component: "Teh + Rose & Rosella",
+    price: 25000,
+    category: "Non Coffe",
+  },
+  {
+    id: 6,
+    name: "Es Signature Coklat",
+    component: "Coklat + Susu ",
+    price: 32000,
+    category: "Signature",
+  },
+  {
+    id: 7,
+    name: "Es Almond Latte",
+    component: "Kopi + Susu + Almond",
+    price: 31000,
+    category: "Ice Coffe",
+  },
+  {
+    id: 8,
+    name: "Es Erly Grey",
+    component: "Teh + Erly Grey",
+    price: 24000,
+    category: "Non Coffe",
+  },
+  {
+    id: 9,
+    name: "Es Creamy Matchachio",
+    component: "Susu + Pistachio + Cream",
+    price: 35000,
+    category: "Signature",
+  },
+  {
+    id: 10,
+    name: "Es Matcha Signatur",
+    component: "Susu + Bubuk Macth",
+    price: 33000,
+    category: "Signature",
+  },
+];
 
 export default function MenuPage() {
-  const menuItems = [
-    {
-      name: "Es Tiramisu Latte",
-      component: "Kopi + Susu + Tiramisu",
-      price: 30000,
-    },
-    {
-      name: "Es  Americano",
-      component: "Kopi + Air + Es",
-      price: 30000,
-    },
-    {
-      name: "Es Cappucino Latte",
-      component: "Kopi + Susu + Cincau",
-      price: 30000,
-    },
-    {
-      name: "Es Caramel Latte",
-      component: "Kopi + Susu + Caramel",
-      price: 30000,
-    },
-    {
-      name: "Es Rose & Rosella",
-      component: "Teh + Rose & Rosella",
-      price: 30000,
-    },
-    {
-      name: "Es Signature Coklat",
-      component: "Coklat + Susu ",
-      price: 30000,
-    },
-    {
-      name: "Es Almond Latte",
-      component: "Kopi + Susu + Almond",
-      price: 30000,
-    },
-    {
-      name: "Es Erly Grey",
-      component: "Teh + Erly Grey",
-      price: 30000,
-    },
-    {
-      name: "Es Creamy Matchachio",
-      component: "Susu + Pistachio + Cream",
-      price: 30000,
-    },
-    {
-      name: "Es Matcha Signatur",
-      component: "Susu + Bubuk Macth",
-      price: 30000,
-    },
-  ];
+  const [search, setSearch] = useState("");
+  const [activeCategory, setActiveCategory] = useState("Semua");
+  const [sortOption, setSortOption] = useState<SortOption>("newest");
+
+  const filteredItems = useMemo(() => {
+    const keyword = search.trim().toLowerCase();
+
+    const result = menuItems.filter((item) => {
+      const matchesCategory =
+        activeCategory === "Semua" || item.category === activeCategory;
+      const matchesSearch =
+        keyword === "" || item.name.toLowerCase().includes(keyword);
+      return matchesCategory && matchesSearch;
+    });
+
+    switch (sortOption) {
+      case "oldest":
+        return result.sort((a, b) => a.id - b.id);
+      case "asc-price":
+        return result.sort((a, b) => a.price - b.price);
+      case "desc-price":
+        return result.sort((a, b) => b.price - a.price);
+      case "newest":
+      default:
+        return result.sort((a, b) => b.id - a.id);
+    }
+  }, [search, activeCategory, sortOption]);
 
   return (
     <div className="pb-7.5">
@@ -73,41 +135,49 @@ export default function MenuPage() {
               />
               <input
                 type="text"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
                 placeholder="Cari menu favoritmu..."
                 className="w-full rounded-xl p-3.5 pl-10.5 outline outline-[#DAD7CD] placeholder:text-[#A3A3A3]"
               />
             </label>
             <div className="mt-8 flex items-center justify-between text-[#3A5A40]">
-              <Categories />
-              <button className="flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-white px-5 text-sm font-semibold outline outline-[#DAD7CD]">
-                <SlidersHorizontalIcon size={20} />
-                Filter
-              </button>
+              <Categories
+                activeCategory={activeCategory}
+                onCategoryChange={setActiveCategory}
+              />
+              <FilterDropdown value={sortOption} onChange={setSortOption} />
             </div>
           </div>
-          <div className="mt-9 grid grid-cols-5 gap-7 text-sm font-semibold">
-            {menuItems.map((item, index) => (
-              <div
-                key={index}
-                className="min-w-59 rounded-4xl p-5.5 outline outline-[#DAD7CD]"
-              >
+          {filteredItems.length === 0 ? (
+            <p className="mt-12 text-center font-semibold text-[#666666]">
+              Menu tidak ditemukan.
+            </p>
+          ) : (
+            <div className="mt-9 grid grid-cols-5 gap-7 text-sm font-semibold">
+              {filteredItems.map((item) => (
                 <div
-                  id="placeholder"
-                  className="h-30.5 rounded-[14px] bg-[#F0F0F0]"
-                />
-                <h4 className="mt-5 font-bold">{item.name}</h4>
-                <p className="mt-2 text-[#666666]">{item.component}</p>
-                <div className="mt-6.5 flex items-center justify-between gap-3">
-                  <p className="flex gap-1.5">
-                    Rp <span>{item.price}</span>
-                  </p>
-                  <button className="flex h-7.5 w-7.5 cursor-pointer items-center justify-center rounded-full bg-[#3A5A40] text-white">
-                    <PlusIcon />
-                  </button>
+                  key={item.id}
+                  className="min-w-59 rounded-4xl p-5.5 outline outline-[#DAD7CD]"
+                >
+                  <div
+                    id="placeholder"
+                    className="h-30.5 rounded-[14px] bg-[#F0F0F0]"
+                  />
+                  <h4 className="mt-5 font-bold">{item.name}</h4>
+                  <p className="mt-2 text-[#666666]">{item.component}</p>
+                  <div className="mt-6.5 flex items-center justify-between gap-3">
+                    <p className="flex gap-1.5">
+                      Rp <span>{item.price.toLocaleString("id-ID")}</span>
+                    </p>
+                    <button className="flex h-7.5 w-7.5 cursor-pointer items-center justify-center rounded-full bg-[#3A5A40] text-white">
+                      <PlusIcon />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
       <section id="why-us" className="p-5">

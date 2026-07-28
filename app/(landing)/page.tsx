@@ -261,31 +261,6 @@ export default function Home() {
             <h3 className="mt-3 px-1 font-mono text-[32px] font-semibold text-[#3A5A40]">
               Paling banyak dipesan
             </h3>
-            <div className="mt-6 flex items-center justify-between text-[#3A5A40]">
-              <div className="flex h-10 gap-4 rounded-[10px] bg-[#F6EFE8] outline-2 -outline-offset-2 outline-[#DAD7CD]">
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] bg-[#3A5A40] px-5 text-sm font-semibold text-white">
-                  Semua
-                </div>
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                  Ice Coffe
-                </div>
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                  Hot Coffe
-                </div>
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                  Signature
-                </div>
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                  Non Coffe
-                </div>
-              </div>
-              <Link
-                href="/"
-                className="flex items-center gap-2 px-1 font-semibold"
-              >
-                Lihat Semua Menu <ArrowRightIcon size={20} />
-              </Link>
-            </div>
             <div className="mt-9 grid grid-cols-3 gap-7 text-sm font-bold">
               {bestSellerItems.map((item, index) => (
                 <div
