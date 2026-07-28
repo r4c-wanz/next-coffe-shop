@@ -24,7 +24,7 @@ export default function Footer() {
       </div>
       <div className="bg-[#344E41] py-2.5">
         <p className="text-center">
-          &copy; 2026 Cituisi Coffe. All Right Reserved.
+          &copy; 2026 Cituisi Coffee. All Right Reserved.
         </p>
       </div>
     </footer>

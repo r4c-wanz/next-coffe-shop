@@ -5,88 +5,8 @@ import Categories from "@/app/component/Categories";
 import FilterDropdown, {
   type SortOption,
 } from "@/app/component/FilterDropdown";
+import { menuItems } from "@/app/data/menu";
 import { PlusIcon, SearchIcon } from "lucide-react";
-
-type MenuItem = {
-  id: number;
-  name: string;
-  component: string;
-  price: number;
-  category: string;
-};
-
-const menuItems: MenuItem[] = [
-  {
-    id: 1,
-    name: "Es Tiramisu Latte",
-    component: "Kopi + Susu + Tiramisu",
-    price: 30000,
-    category: "Ice Coffe",
-  },
-  {
-    id: 2,
-    name: "Es  Americano",
-    component: "Kopi + Air + Es",
-    price: 22000,
-    category: "Ice Coffe",
-  },
-  {
-    id: 3,
-    name: "Es Cappucino Latte",
-    component: "Kopi + Susu + Cincau",
-    price: 28000,
-    category: "Ice Coffe",
-  },
-  {
-    id: 4,
-    name: "Es Caramel Latte",
-    component: "Kopi + Susu + Caramel",
-    price: 29000,
-    category: "Ice Coffe",
-  },
-  {
-    id: 5,
-    name: "Es Rose & Rosella",
-    component: "Teh + Rose & Rosella",
-    price: 25000,
-    category: "Non Coffe",
-  },
-  {
-    id: 6,
-    name: "Es Signature Coklat",
-    component: "Coklat + Susu ",
-    price: 32000,
-    category: "Signature",
-  },
-  {
-    id: 7,
-    name: "Es Almond Latte",
-    component: "Kopi + Susu + Almond",
-    price: 31000,
-    category: "Ice Coffe",
-  },
-  {
-    id: 8,
-    name: "Es Erly Grey",
-    component: "Teh + Erly Grey",
-    price: 24000,
-    category: "Non Coffe",
-  },
-  {
-    id: 9,
-    name: "Es Creamy Matchachio",
-    component: "Susu + Pistachio + Cream",
-    price: 35000,
-    category: "Signature",
-  },
-  {
-    id: 10,
-    name: "Es Matcha Signatur",
-    component: "Susu + Bubuk Macth",
-    price: 33000,
-    category: "Signature",
-  },
-];
 
 export default function MenuPage() {
   const [search, setSearch] = useState("");

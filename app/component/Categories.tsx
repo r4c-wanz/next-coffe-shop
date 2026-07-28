@@ -2,10 +2,10 @@
 
 export const categories = [
   { name: "Semua" },
-  { name: "Ice Coffe" },
-  { name: "Hot Coffe" },
+  { name: "Ice Coffee" },
+  { name: "Hot Coffee" },
   { name: "Signature" },
-  { name: "Non Coffe" },
+  { name: "Non Coffee" },
 ];
 
 export default function Categories({

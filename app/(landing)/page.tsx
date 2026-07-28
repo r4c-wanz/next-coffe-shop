@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useMemo, useState } from "react";
+import Categories from "../component/Categories";
+import { menuItems } from "../data/menu";
 import {
   ArrowRightIcon,
   CoffeeIcon,
@@ -11,54 +16,22 @@ import {
 } from "lucide-react";
 
 export default function Home() {
-  const menuItems = [
-    {
-      name: "Es Tiramisu Latte",
-      component: "Kopi + Susu + Tiramisu",
-      price: 30000,
-    },
-    {
-      name: "Es Cappucino Latte",
-      component: "Kopi + Susu + Cincau",
-      price: 30000,
-    },
-    {
-      name: "Es Latte Pandan",
-      component: "Kopi + Susu + Pandan",
-      price: 30000,
-    },
-    {
-      name: "Es Americano",
-      component: "Kopi + Air + Es",
-      price: 30000,
-    },
-    {
-      name: "Es Caramel Latte",
-      component: "Kopi + Susu + Caramel",
-      price: 30000,
-    },
-  ];
+  const [activeCategory, setActiveCategory] = useState("Semua");
 
-  const bestSellerItems = [
-    {
-      name: menuItems[0]?.name,
-      component: menuItems[0]?.component,
-      price: menuItems[0]?.price,
-      rating: 4,
-    },
-    {
-      name: menuItems[2]?.name,
-      component: menuItems[2]?.component,
-      price: menuItems[2]?.price,
-      rating: 4,
-    },
-    {
-      name: menuItems[4]?.name,
-      component: menuItems[4]?.component,
-      price: menuItems[4]?.price,
-      rating: 4,
-    },
-  ];
+  const featuredItems = useMemo(
+    () => menuItems.filter((item) => item.featured),
+    [],
+  );
+
+  const bestSellerItems = useMemo(
+    () => menuItems.filter((item) => item.bestSeller),
+    [],
+  );
+
+  const filteredMenuItems = useMemo(() => {
+    if (activeCategory === "Semua") return featuredItems;
+    return featuredItems.filter((item) => item.category === activeCategory);
+  }, [activeCategory, featuredItems]);
 
   const colors = ["bg-[#3A5A40]", "bg-[#3A5A40]", "bg-[#3B2010]"];
 
@@ -183,23 +156,10 @@ export default function Home() {
               Pilihan Menu Favoritmu
             </h3>
             <div className="mt-6 flex items-center justify-between text-[#3A5A40]">
-              <div className="flex h-10 gap-4 rounded-[10px] bg-[#F6EFE8] outline-2 -outline-offset-2 outline-[#DAD7CD]">
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] bg-[#3A5A40] px-5 text-sm font-semibold text-white">
-                  Semua
-                </div>
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                  Ice Coffe
-                </div>
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                  Hot Coffe
-                </div>
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                  Signature
-                </div>
-                <div className="relative z-1 flex h-full items-center justify-center rounded-[10px] px-5 text-sm font-semibold">
-                  Non Coffe
-                </div>
-              </div>
+              <Categories
+                activeCategory={activeCategory}
+                onCategoryChange={setActiveCategory}
+              />
               <Link
                 href="/"
                 className="flex items-center gap-2 px-1 font-semibold"
@@ -207,10 +167,15 @@ export default function Home() {
                 Lihat Semua Menu <ArrowRightIcon size={20} />
               </Link>
             </div>
+            {filteredMenuItems.length === 0 ? (
+              <p className="mt-12 text-center font-semibold text-[#666666]">
+                Menu tidak ditemukan.
+              </p>
+            ) : (
             <div className="mt-9 grid grid-cols-5 gap-7 text-sm font-bold">
-              {menuItems.map((item, index) => (
+              {filteredMenuItems.map((item) => (
                 <div
-                  key={index}
+                  key={item.id}
                   className="w-full rounded-4xl p-5.5 outline outline-[#DAD7CD]"
                 >
                   <div
@@ -230,6 +195,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            )}
           </div>
         </section>
         <section id="promo" className="p-5">
@@ -262,9 +228,9 @@ export default function Home() {
               Paling banyak dipesan
             </h3>
             <div className="mt-9 grid grid-cols-3 gap-7 text-sm font-bold">
-              {bestSellerItems.map((item, index) => (
+              {bestSellerItems.map((item) => (
                 <div
-                  key={index}
+                  key={item.id}
                   className="flex w-full min-w-59 items-center gap-6.5 rounded-4xl p-5.5 outline outline-[#DAD7CD]"
                 >
                   <div
@@ -293,7 +259,7 @@ export default function Home() {
           <div className="mx-auto max-w-323">
             <div className="relative overflow-hidden rounded-[20px] bg-[#3A5A40] px-12.5 py-7 text-white">
               <div className="">
-                <h2 className="text-[#E5E5E5]">Kenapa pilih Cituisi Coffe?</h2>
+                <h2 className="text-[#E5E5E5]">Kenapa pilih Cituisi Coffee?</h2>
                 <h3 className="mt-2.5 font-mono text-[32px] font-semibold">
                   Lebih dari sekedar kopi
                 </h3>

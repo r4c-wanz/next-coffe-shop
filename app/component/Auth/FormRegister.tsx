@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import LogoWithText from "../LogoWithText";
+import PasswordInput from "./PasswordInput";
 
 export default function FormRegister() {
   return (
@@ -23,7 +24,7 @@ export default function FormRegister() {
           <input
             type="text"
             placeholder="Masukkan Nama Lengkap"
-            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
+            className="mt-2 w-full rounded-lg p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
           />
         </div>
         <div className="mt-4">
@@ -33,7 +34,7 @@ export default function FormRegister() {
           <input
             type="email"
             placeholder="Masukkan Email"
-            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
+            className="mt-2 w-full rounded-lg p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
           />
         </div>
         <div className="mt-4">
@@ -43,27 +44,23 @@ export default function FormRegister() {
           <input
             type="tel"
             placeholder="Masukkan No Handphone"
-            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
+            className="mt-2 w-full rounded-lg p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
           />
         </div>
         <div className="mt-4">
-          <label className="text-sm font-semibold text-[#344E41]">
-            Password <span className="text-[#E68B24]">*</span>
-          </label>
-          <input
-            type="password"
+          <PasswordInput
+            label="Password"
+            name="password"
+            id="password"
             placeholder="Masukkan Password"
-            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
           />
         </div>
         <div className="mt-4">
-          <label className="text-sm font-semibold text-[#344E41]">
-            Konfirmasi Password <span className="text-[#E68B24]">*</span>
-          </label>
-          <input
-            type="password"
+          <PasswordInput
+            label="Konfirmasi Password"
+            name="confirmPassword"
+            id="confirmPassword"
             placeholder="Masukkan Ulang Password"
-            className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
           />
         </div>
         <div className="mt-3 flex justify-end">
@@ -76,7 +73,7 @@ export default function FormRegister() {
         </div>
         <button
           type="submit"
-          className="mt-6 w-full cursor-pointer rounded-[20px] bg-[#3A5A40] py-4 text-sm font-bold text-white"
+          className="mt-6 w-full cursor-pointer rounded-xl bg-[#3A5A40] py-4 text-sm font-bold text-white"
         >
           Daftar
         </button>
