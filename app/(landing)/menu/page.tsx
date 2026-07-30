@@ -7,6 +7,7 @@ import FilterDropdown, {
 } from "@/app/component/FilterDropdown";
 import { menuItems } from "@/app/data/menu";
 import { PlusIcon, SearchIcon } from "lucide-react";
+import Image from "next/image";
 
 export default function MenuPage() {
   const [search, setSearch] = useState("");
@@ -51,7 +52,7 @@ export default function MenuPage() {
             <label className="relative">
               <SearchIcon
                 size={20}
-                className="absolute top-1/2 -translate-y-1/2 left-3.5 text-[#666666]"
+                className="absolute top-1/2 left-3.5 -translate-y-1/2 text-[#666666]"
               />
               <input
                 type="text"
@@ -82,8 +83,15 @@ export default function MenuPage() {
                 >
                   <div
                     id="placeholder"
-                    className="h-30.5 rounded-[14px] bg-[#F0F0F0]"
-                  />
+                    className="relative h-30.5 overflow-hidden rounded-[14px] bg-[#F0F0F0]"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                   <h4 className="mt-5 font-bold">{item.name}</h4>
                   <p className="mt-2 text-[#666666]">{item.component}</p>
                   <div className="mt-6.5 flex items-center justify-between gap-3">

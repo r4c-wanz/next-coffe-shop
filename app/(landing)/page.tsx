@@ -94,7 +94,7 @@ export default function Home() {
               dengan dedikasi, untuk kamu nikmati.
             </p>
             <Link
-              href="/"
+              href="/menu"
               className="mt-6 inline-flex items-center gap-3.5 rounded-[20px] bg-[#3A5A40] px-6.5 py-4 font-bold text-white"
             >
               Pesan Sekarang <ArrowRightIcon />
@@ -180,16 +180,20 @@ export default function Home() {
                   >
                     <div
                       id="placeholder"
-                      className="h-30.5 rounded-[14px] bg-[#F0F0F0]"
-                    />
+                      className="relative h-30.5 overflow-hidden rounded-[14px] bg-[#F0F0F0]"
+                    >
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
                     <h4 className="mt-5 font-bold">{item.name}</h4>
                     <p className="mt-2 text-[#666666]">{item.component}</p>
                     <div className="mt-6.5 flex items-center justify-between gap-3">
                       <p className="flex gap-1.5">
-                        Rp{" "}
-                        <span>
-                          {item.price.toLocaleString("id-ID")}
-                        </span>
+                        Rp <span>{item.price.toLocaleString("id-ID")}</span>
                       </p>
                       <button className="flex h-7.5 w-7.5 cursor-pointer items-center justify-center rounded-full bg-[#3A5A40] text-white">
                         <PlusIcon />
@@ -238,8 +242,15 @@ export default function Home() {
                 >
                   <div
                     id="placeholder"
-                    className="h-full w-35 shrink-0 rounded-[14px] bg-[#F0F0F0]"
-                  />
+                    className="relative h-full w-35 shrink-0 overflow-hidden rounded-[14px] bg-[#F0F0F0]"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                   <div className="w-full">
                     <h4 className="">{item.name}</h4>
                     <p className="mt-2 text-[#666666]">{item.component}</p>

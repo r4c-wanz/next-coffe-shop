@@ -4,6 +4,7 @@ export type MenuItem = {
   component: string;
   price: number;
   category: string;
+  image: string;
   /** Tampil di section "Menu Kami" halaman utama */
   featured?: boolean;
   /** Tampil di section "Best Seller" halaman utama */
@@ -22,6 +23,7 @@ export const menuItems: MenuItem[] = [
     featured: true,
     bestSeller: true,
     rating: 4,
+    image: "/images/menu/place-holder-image-coffee.png",
   },
   {
     id: 2,
@@ -30,6 +32,7 @@ export const menuItems: MenuItem[] = [
     price: 22000,
     category: "Ice Coffee",
     featured: true,
+    image: "/images/menu/place-holder-image-coffee.png",
   },
   {
     id: 3,
@@ -37,6 +40,7 @@ export const menuItems: MenuItem[] = [
     component: "Kopi + Susu + Cincau",
     price: 28000,
     category: "Ice Coffee",
+    image: "/images/menu/place-holder-image-coffee.png",
   },
   {
     id: 4,
@@ -45,6 +49,7 @@ export const menuItems: MenuItem[] = [
     price: 29000,
     category: "Ice Coffee",
     featured: true,
+    image: "/images/menu/place-holder-image-coffee.png",
   },
   {
     id: 5,
@@ -52,6 +57,7 @@ export const menuItems: MenuItem[] = [
     component: "Teh + Rose & Rosella",
     price: 25000,
     category: "Non Coffee",
+    image: "/images/menu/place-holder-image-coffee.png",
   },
   {
     id: 6,
@@ -59,6 +65,7 @@ export const menuItems: MenuItem[] = [
     component: "Coklat + Susu",
     price: 32000,
     category: "Signature",
+    image: "/images/menu/place-holder-image-coffee.png",
   },
   {
     id: 7,
@@ -66,6 +73,7 @@ export const menuItems: MenuItem[] = [
     component: "Kopi + Susu + Almond",
     price: 31000,
     category: "Ice Coffee",
+    image: "/images/menu/place-holder-image-coffee.png",
   },
   {
     id: 8,
@@ -73,6 +81,7 @@ export const menuItems: MenuItem[] = [
     component: "Teh + Erly Grey",
     price: 24000,
     category: "Non Coffee",
+    image: "/images/menu/place-holder-image-coffee.png",
   },
   {
     id: 9,
@@ -82,6 +91,7 @@ export const menuItems: MenuItem[] = [
     category: "Signature",
     bestSeller: true,
     rating: 4,
+    image: "/images/menu/place-holder-image-coffee.png",
   },
   {
     id: 10,
@@ -92,5 +102,6 @@ export const menuItems: MenuItem[] = [
     featured: true,
     bestSeller: true,
     rating: 4,
+    image: "/images/menu/place-holder-image-coffee.png",
   },
 ];
