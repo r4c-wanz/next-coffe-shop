@@ -1,71 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import LogoWithText from "../LogoWithText";
+import IconInput from "./IconInput";
+import ContactInput from "./ContactInput";
 import PasswordInput from "./PasswordInput";
-import { MailIcon, PhoneIcon, UserRoundIcon } from "lucide-react";
+import { UserRoundIcon } from "lucide-react";
 
 export default function FormRegister() {
   return (
     <div className="w-full max-w-md">
-      <div className="flex w-full justify-center pb-5">
-        <LogoWithText />
-      </div>
-      <h2 className="text-center font-mono text-[28px] font-semibold text-[#3A5A40]">
+      <h1 className="text-center font-mono text-2xl font-semibold text-[#3A5A40]">
         Daftar Akun
-      </h2>
+      </h1>
       <p className="mt-2 text-center text-sm font-medium text-[#666666]">
         Buat akun untuk melanjutkan
       </p>
       <form className="mt-6">
-        <div>
-          <label className="text-sm font-semibold text-[#344E41]">
-            Nama Lengkap <span className="text-[#E68B24]">*</span>
-          </label>
-          <label className="relative">
-            <input
-              type="text"
-              placeholder="Masukkan Nama Lengkap"
-              className="mt-2 w-full rounded-lg p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
-            />
-            <UserRoundIcon
-              className="absolute top-1/2 right-4 -translate-y-1/2 text-[#666666]"
-              strokeWidth={1.5}
-            />
-          </label>
-        </div>
+        <IconInput
+          label="Nama Lengkap"
+          name="fullName"
+          id="fullName"
+          type="text"
+          icon={UserRoundIcon}
+          placeholder="Masukkan Nama Lengkap"
+        />
+
         <div className="mt-4">
-          <label className="text-sm font-semibold text-[#344E41]">
-            Email <span className="text-[#E68B24]">*</span>
-          </label>
-          <label className="relative">
-            <input
-              type="email"
-              placeholder="Masukkan Email"
-              className="mt-2 w-full rounded-lg p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
-            />
-            <MailIcon
-              className="absolute top-1/2 right-4 -translate-y-1/2 text-[#666666]"
-              strokeWidth={1.5}
-            />
-          </label>
+          <ContactInput />
         </div>
-        <div className="mt-4">
-          <label className="text-sm font-semibold text-[#344E41]">
-            No Handphone <span className="text-[#E68B24]">*</span>
-          </label>
-          <label className="relative">
-            <input
-              type="tel"
-              placeholder="Masukkan No Handphone"
-              className="mt-2 w-full rounded-lg p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
-            />
-            <PhoneIcon
-              className="absolute top-1/2 right-4 -translate-y-1/2 text-[#666666]"
-              strokeWidth={1.5}
-            />
-          </label>
-        </div>
+
         <div className="mt-4">
           <PasswordInput
             label="Password"

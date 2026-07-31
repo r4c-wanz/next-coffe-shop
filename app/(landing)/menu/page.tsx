@@ -65,7 +65,7 @@ export default function MenuPage() {
             <div className="mt-8 flex items-center justify-between text-[#3A5A40]">
               <Categories
                 activeCategory={activeCategory}
-                onCategoryChange={setActiveCategory}
+                onCategoryChangeAction={setActiveCategory}
               />
               <FilterDropdown value={sortOption} onChange={setSortOption} />
             </div>

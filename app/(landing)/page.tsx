@@ -158,7 +158,7 @@ export default function Home() {
             <div className="mt-6 flex items-center justify-between text-[#3A5A40]">
               <Categories
                 activeCategory={activeCategory}
-                onCategoryChange={setActiveCategory}
+                onCategoryChangeAction={setActiveCategory}
               />
               <Link
                 href="/menu"

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useActionState } from "react";
 import { loginAction, type LoginState } from "../../actions/login";
 import LogoWithText from "../LogoWithText";
+import IconInput from "./IconInput";
 import PasswordInput from "./PasswordInput";
 import { MailIcon } from "lucide-react";
 
@@ -18,36 +19,23 @@ export default function FormLogin() {
   return (
     <div className="w-full max-w-md">
       <div className="flex w-full justify-center pb-6">
-        <LogoWithText />
+        <LogoWithText className="h-7 w-20" />
       </div>
-      <h2 className="text-center font-mono text-[28px] font-semibold text-[#3A5A40]">
+      <h2 className="text-center font-mono text-2xl font-semibold text-[#3A5A40]">
         Selamat Datang Kembali
       </h2>
       <p className="mt-2 text-center text-sm font-medium text-[#666666]">
         Masuk untuk melanjutkan ke akunmu
       </p>
       <form action={formAction} className="mt-8">
-        <div>
-          <label
-            htmlFor="email"
-            className="text-sm font-semibold text-[#344E41]"
-          >
-            Email <span className="text-[#E68B24]">*</span>
-          </label>
-          <label className="relative">
-            <input
-              type="email"
-              name="email"
-              placeholder="Masukkan Email"
-              id="email"
-              className="mt-2 w-full rounded-lg p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
-            />
-            <MailIcon
-              className="absolute top-1/2 right-4 -translate-y-1/2 text-[#666666]"
-              strokeWidth={1.5}
-            />
-          </label>
-        </div>
+        <IconInput
+          label="Email"
+          name="email"
+          id="email"
+          type="email"
+          icon={MailIcon}
+          placeholder="Masukkan Email"
+        />
         <div className="mt-4">
           <PasswordInput
             label="Password"

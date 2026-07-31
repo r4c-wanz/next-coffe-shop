@@ -1,3 +1,5 @@
+import ContactInput from "@/app/component/Auth/ContactInput";
+import IconInput from "@/app/component/Auth/IconInput";
 import {
   ArrowRightIcon,
   AtSignIcon,
@@ -5,6 +7,7 @@ import {
   MailIcon,
   MapPinIcon,
   PhoneIcon,
+  UserRoundIcon,
 } from "lucide-react";
 
 export default function KontakPage() {
@@ -72,35 +75,16 @@ export default function KontakPage() {
                 Isi form di bawah ini dan tim kami akan segera membalas.
               </p>
               <form className="mt-6">
-                <div>
-                  <label className="text-sm font-semibold text-[#344E41]">
-                    Nama <span className="text-[#E68B24]">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Masukkan Nama"
-                    className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
-                  />
-                </div>
+                <IconInput
+                  label="Nama Lengkap"
+                  name="fullName"
+                  id="fullName"
+                  type="text"
+                  icon={UserRoundIcon}
+                  placeholder="Masukkan Nama Lengkap"
+                />
                 <div className="mt-4">
-                  <label className="text-sm font-semibold text-[#344E41]">
-                    Email <span className="text-[#E68B24]">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Masukkan Email"
-                    className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
-                  />
-                </div>
-                <div className="mt-4">
-                  <label className="text-sm font-semibold text-[#344E41]">
-                    Nomor Telepon <span className="text-[#E68B24]">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="Masukkan Nomor Telepon"
-                    className="mt-2 w-full rounded-[10px] p-3 text-sm font-medium text-[#344E41] outline-2 -outline-offset-2 outline-[#DAD7CD] placeholder:text-[#999999] focus:outline-[#3A5A40]"
-                  />
+                  <ContactInput />
                 </div>
                 <div className="mt-4">
                   <label className="text-sm font-semibold text-[#344E41]">
