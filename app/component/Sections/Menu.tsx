@@ -3,41 +3,41 @@ import Categories from "../Categories";
 import Link from "next/link";
 import { ArrowRightIcon, PlusIcon } from "lucide-react";
 
+const menuItems = [
+  {
+    name: "Es Tiramisu Latte",
+    component: "Kopi + Susu + Tiramisu",
+    price: 30000,
+    category: "Ice Coffee",
+  },
+  {
+    name: "Es Cappucino Latte",
+    component: "Kopi + Susu + Cincau",
+    price: 30000,
+    category: "Ice Coffee",
+  },
+  {
+    name: "Es Latte Pandan",
+    component: "Kopi + Susu + Pandan",
+    price: 30000,
+    category: "Signature",
+  },
+  {
+    name: "Es Americano",
+    component: "Kopi + Air + Es",
+    price: 30000,
+    category: "Ice Coffee",
+  },
+  {
+    name: "Es Caramel Latte",
+    component: "Kopi + Susu + Caramel",
+    price: 30000,
+    category: "Ice Coffee",
+  },
+];
+
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState("Semua");
-
-  const menuItems = [
-    {
-      name: "Es Tiramisu Latte",
-      component: "Kopi + Susu + Tiramisu",
-      price: 30000,
-      category: "Ice Coffee",
-    },
-    {
-      name: "Es Cappucino Latte",
-      component: "Kopi + Susu + Cincau",
-      price: 30000,
-      category: "Ice Coffee",
-    },
-    {
-      name: "Es Latte Pandan",
-      component: "Kopi + Susu + Pandan",
-      price: 30000,
-      category: "Signature",
-    },
-    {
-      name: "Es Americano",
-      component: "Kopi + Air + Es",
-      price: 30000,
-      category: "Ice Coffee",
-    },
-    {
-      name: "Es Caramel Latte",
-      component: "Kopi + Susu + Caramel",
-      price: 30000,
-      category: "Ice Coffee",
-    },
-  ];
 
   const filteredMenuItems = useMemo(() => {
     if (activeCategory === "Semua") return menuItems;
@@ -54,7 +54,7 @@ export default function Menu() {
         <div className="mt-6 flex items-center justify-between text-[#3A5A40]">
           <Categories
             activeCategory={activeCategory}
-            onCategoryChange={setActiveCategory}
+            onCategoryChangeAction={setActiveCategory}
           />
           <Link href="/" className="flex items-center gap-2 px-1 font-semibold">
             Lihat Semua Menu <ArrowRightIcon size={20} />
