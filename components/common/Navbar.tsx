@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ShoppingCartIcon, UserRoundIcon } from "lucide-react";
-import LogoWithText from "./LogoWithText";
+import LogoWithText from "../ui/LogoWithText";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {

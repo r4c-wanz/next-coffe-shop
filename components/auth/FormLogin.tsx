@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useActionState } from "react";
-import { loginAction, type LoginState } from "../../actions/login";
-import LogoWithText from "../LogoWithText";
+import { loginAction, type LoginState } from "@/app/actions/login";
+import LogoWithText from "../ui/LogoWithText";
 import IconInput from "./IconInput";
 import PasswordInput from "./PasswordInput";
 import { MailIcon } from "lucide-react";
